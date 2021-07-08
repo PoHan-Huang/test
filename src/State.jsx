@@ -9,6 +9,17 @@ function State(props) {
       title: "State",
       dataIndex: "state",
       key: "state",
+      render: (text, row) => {
+        if (row.city === citySelect) {
+          return (
+            <b>{text}</b>
+          )
+        } else {
+          return (
+            <span>{text}</span>
+          )
+        }
+      }
     },
     {
       title: "City",
@@ -17,7 +28,7 @@ function State(props) {
       render: (text) => {
         if (text === citySelect) {
           return (
-            <b style={{color: `red`}}>{text}</b>
+            <b>{text}</b>
           )
         } else {
           return (
@@ -29,12 +40,34 @@ function State(props) {
     {
       title: "Houses",
       dataIndex: "houses",
-      key: "houses"
+      key: "houses",
+      render: (text, row) => {
+        if (row.city === citySelect) {
+          return (
+            <b>{text}</b>
+          )
+        } else {
+          return (
+            <span>{text}</span>
+          )
+        }
+      }
     },
     {
       title: "Avg. Price",
       dataIndex: "avgPrice",
       key: "avgPrice",
+      render: (text, row) => {
+        if (row.city === citySelect) {
+          return (
+            <b>{text}</b>
+          )
+        } else {
+          return (
+            <span>{text}</span>
+          )
+        }
+      }
     }
   ];
 
